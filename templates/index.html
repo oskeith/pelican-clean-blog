@@ -4,16 +4,17 @@
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     {% if HEADER_COVER %}
-        <header class="intro-header" style="background-image: url('{{ SITEURL }}/{{ HEADER_COVER }}')">
+        <header class="masthead" style="background-image: url('{{ SITEURL }}/{{ HEADER_COVER }}')">
     {% elif HEADER_COLOR %}
-        <header class="intro-header" style="background-color: {{ HEADER_COLOR }}">
+        <header class="masthead" style="background-color: {{ HEADER_COLOR }}">
     {% else %}
-        <header class="intro-header" style="background-image: url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/home-bg.jpg')">
     {% endif %}
+    <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                    <div class="page-heading">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
                         <h1>{{ SITENAME }}</h1>
                         {% if SITESUBTITLE %}
                             <hr class="small">
@@ -40,13 +41,6 @@
 {% endblock header %}
 
 {% block content %}
-    {% if INTRO_CONTENT %}
-        <div class="row intro-content">
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                {{ INTRO_CONTENT }}
-            </div>
-        </div>
-    {% endif %}
     {% for article in articles_page.object_list %}
         <div class="post-preview">
             <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
@@ -57,7 +51,7 @@
             {% if SHOW_FULL_ARTICLE %}
                 {{ article.content }}
             {% else %}
-                <p class="article-summary">
+                <p class="post-subtitle">
                 {% if article.has_summary %}
                     {{ article.summary }}
                 {% elif article.summary %}
