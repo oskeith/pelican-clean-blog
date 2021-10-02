@@ -1,12 +1,19 @@
 # Pelican Clean Blog Theme
 
-Theme based in [Clean Blog layout](https://github.com/BlackrockDigital/startbootstrap-clean-blog).
+This theme is forked from gilsondev's adaptation of BlackrockDigital's [Clean Blog layout](https://github.com/BlackrockDigital/startbootstrap-clean-blog). <br/>
+Differences include:
+* Bootstrap v3.3.0 -> v4.6.0
+* jQuery v2.1.1 -> v3.5.1
+* Font Awesome v4.7.0 -> v5.15.4
+* Clean Blog v1.0.0 -> v5.0.10
+* More faithful to the original Clean Blog layout
 
+## Demo
+A live demo hosted by BlackrockDigital can be found [here](https://startbootstrap.github.io/startbootstrap-clean-blog/). While there may be some minor differences, the overal feel and look of this port is very similar.
+
+## Usage
+This theme can be installed like any other Pelican theme. Point to it within `pelicanconf.py`
 >:warning: This theme requires Pelican 4.0.0 or newer.
-
-## Screenshot
-
-![Screenshot](screenshot.png)
 
 ## Basic configuration
 
@@ -223,5 +230,3 @@ Headline: Resume of article
 
 This is the content of my super blog post.
 ```
-
-Test
