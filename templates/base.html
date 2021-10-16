@@ -128,12 +128,16 @@
                 {% if DISPLAY_PAGES_ON_MENU %}
                     {# FIXME: Simplify to 'for p in pages' when we are ready to drop support for Pelican < 3.7 #}
                     {% for p in PAGES or pages %}
-                        <li{% if p == page %} class="nav-item active"{% endif %}><a class="nav-link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                        <li{% if p == page %} class="nav-item active" {% else %} class="nav-item active" {% endif %}>
+                            <a class="nav-link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                        </li>
                     {% endfor %}
                 {% else %}
                     {% if DISPLAY_CATEGORIES_ON_MENU %}
                         {% for cat, null in categories %}
-                            <li{% if cat == category %} class="nav-item active"{% endif %}><a class="nav-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                            <li{% if cat == category %} class="nav-item active" {% else %} class="nav-item active" {% endif %}>
+                                <a class="nav-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+                            </li>
                         {% endfor %}
                     {% endif %}
                 {% endif %}
